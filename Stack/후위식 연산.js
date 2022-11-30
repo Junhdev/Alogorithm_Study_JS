@@ -1,10 +1,4 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
+
             function solution(s){  
                 let answer;
                 let stack=[];
@@ -25,6 +19,4 @@
 
             let str="352+*9-";
             console.log(solution(str));
-        </script>
-    </body>
-</html>
+        
