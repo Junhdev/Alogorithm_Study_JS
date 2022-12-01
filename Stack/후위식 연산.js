@@ -1,4 +1,3 @@
-
             function solution(s){  
                 let answer;
                 let stack=[];
