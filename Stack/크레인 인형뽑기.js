@@ -1,10 +1,4 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
+
             function solution(board, moves){
                 let answer=0;
                 let stack=[];
@@ -34,6 +28,4 @@
 
             let b=[1, 5, 3, 5, 1, 2, 1, 4];
             console.log(solution(a, b));
-        </script>
-    </body>
-</html>
+        
