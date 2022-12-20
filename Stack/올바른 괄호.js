@@ -1,10 +1,3 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
             function solution(s){
                 let answer="YES";
                 stack=[];
@@ -21,6 +14,4 @@
             
             let a="(()(()))(()";
             console.log(solution(a));
-        </script>
-    </body>
-</html>
+        
