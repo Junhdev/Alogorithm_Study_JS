@@ -1,10 +1,3 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
             function solution(n){  
                 let answer=0;
                 let dy=Array.from({length:n+1}, ()=>0);
@@ -18,6 +11,4 @@
             }
 
             console.log(solution(7));
-        </script>
-    </body>
-</html>
+        
