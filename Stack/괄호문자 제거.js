@@ -3,7 +3,10 @@
                 let stack=[];
                 for(let x of s){
                     if(x===')'){
-                        while(stack.pop()!=='(');
+                        while(stack[stack.length-1]!=='('){
+                            stack.pop();
+                        }
+                        stack.pop();
                     }
                     else stack.push(x);
                 }
