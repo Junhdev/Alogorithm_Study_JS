@@ -1,19 +1,16 @@
 const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
-const [a, b ,...c] = fs.readFileSync(__dirname+'/input.txt').toString().trim().split("\n");
-let input1 = a.trim().split('');
+const [a, b ,...c] = fs.readFileSync(__dirname+'/input.txt').toString().trim().split("\n"); 
+let input = a.trim().split('');
 
 
-
-//const inputArr = input.trim().split(" ")
-
-function solution(input1 ,word){
+function solution(input, word){
     
     let arr = Array.from({length:20});
-    for(i=0; i<input1.length; i++){
-        arr[i] = input1[i];
+    for(i=0; i<input.length; i++){
+        arr[i] = input[i];
     }
-    arr[input1.length] = '*';
+    arr[input.length] = '*';
     
     let wordArr ='';
     for(let i=0; i<word.length; i++){
@@ -90,4 +87,4 @@ function solution(input1 ,word){
 
 
 
-console.log(solution(input1,word));
+console.log(solution(input, word));
