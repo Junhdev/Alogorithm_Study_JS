@@ -16,7 +16,7 @@ function solution(N, input){
         
         for(let k=0; k<stack.length; k++){
             stack.pop();
-            stack.pop(); // ????
+            stack.pop(); // 다시 확인 **????
             
             //console.log(stack) // stack 길이만큼 pop  stack[5] >> stack[] // ...
         }
