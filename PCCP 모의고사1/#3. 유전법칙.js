@@ -1,5 +1,5 @@
 function solution(queries) {
-    var answer = [];
+    let answer = [];
 
     //arr[[0],[0,'Rr',0,0,,,4^n-1까지],[0,'RR','Rr','Rr','rr'],[0,0,0,0,0],[...]]
     const arr = Array.from(Array(16), () => new Array(4^15)); //16xp 이차원배열 만들기
