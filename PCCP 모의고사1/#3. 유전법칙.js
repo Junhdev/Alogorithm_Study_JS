@@ -43,7 +43,7 @@ function solution(queries) {
             }
         }
     }
-        
+        /*
     for(let n=2; n<=16; n++){ //[[2,3]]
         for(let p=1; p <= 4^(n-1); p++){ 
             if([arr[n-1][Math.ceil(p/4)]] === 'RR'){ //부모 노드
@@ -71,7 +71,7 @@ function solution(queries) {
                 arr[n][p] = 'rr';
             }
         }
-    }
+    
     
     for(let i=0; i<queries.length; i++){ // queries[[3, 1], [2, 3], [3, 9]]
         n = queries[i][0]; 
@@ -85,5 +85,4 @@ function solution(queries) {
     RR 이면 [RR,RR,RR,RR]
     rr 이면 [rr,rr,rr,rr] */
     return answer;
-}
 }
