@@ -2,10 +2,10 @@ function solution(s){
     let answer;
     let stack = [];
     for(let x of s){
-        if(!isNaN(x)){ // x가 숫자이면
-            stack.push(Number(x));
+        if(!isNaN(x)){ // x가 문자열이면 isNaN(x)===true , 그러므로 !isNaN(x)===false 즉, x가 숫자일때
+            stack.push(Number(x)); //x는 숫자의 형태이나 문자열로 받았으므로 Number메서드로 숫자화 해주어야 한다.
         }
-        else{// x가 연산식이면
+        else{// x가 숫자가 아니면 === 연산식이면
             let rt = stack.pop();
             let lt = stack.pop();
             if(x==='+'){
