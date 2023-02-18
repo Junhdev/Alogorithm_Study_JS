@@ -85,4 +85,4 @@ function solution(queries) {
     RR 이면 [RR,RR,RR,RR]
     rr 이면 [rr,rr,rr,rr] */
     return answer;
-}
+
