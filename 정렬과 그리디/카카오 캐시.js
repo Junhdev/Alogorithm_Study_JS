@@ -7,6 +7,7 @@ function solution(S,N,input_string) {
         if(stack.includes(inputArr[i])){ //i=5, 2,[6,2,3,1]
             // 포함되어있는 인덱스 번호 찾기
             let index = stack.indexOf(inputArr[i]); // 1
+            // 포함되어있는 원소 기준 왼쪽 원소들만 선택정렬
             for(let j=index-1; j>=0; j--){ // j=0
                 stack[j+1] = stack[j] // stack[6,6,3,1]
                 
