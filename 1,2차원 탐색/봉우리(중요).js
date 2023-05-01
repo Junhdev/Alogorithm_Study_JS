@@ -29,6 +29,7 @@ function solution(N, input) {
                         }
                     }
                     // 배열에 0이 하나라도 포함안되어 있으면 모든 경우에 if문을 만족하므로 이렇게 해야함 
+                    // 주위의 모든 원소들보다 큰 숫자이면 봉우리이므로 ++
                     if(!flag.includes(0)){
                         answer ++;
                     }  
