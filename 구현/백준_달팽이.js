@@ -5,6 +5,114 @@ function solution(input) {
     let answer = '';
     let chart = Array.from(Array(N), () => Array(N).fill(0));
     chart[parseInt(N/2)][parseInt(N/2)] = 1;
+
+    let dx = [-1,0,1,0];
+    let dy = [0,1,0,-1];
+    let stack = [[parseInt(N/2),parseInt(N/2)]];
+    let beforeNum = 1;
+    let index = 0;
+    let myArr = [];
+    let sub = [];
+            
+    while(stack.length !==0){
+                    
+        let [x,y]=stack.pop(); // [2,2]
+        for(let k=0; k<4; k++){
+            let nX=x+dx[k];
+            let nY=y+dy[k];
+            if(nX>=0 && nX<N && nY>=0 && nY<N && chart[nX][nY] === 0){
+                sub.push(k);
+            }
+        }
+
+        //dis에 4개 있을때(1시작일때 위로 이동)
+        if(sub.length === 4){
+            index = 0
+        }
+
+        // dis에 3개 있을때
+        if(sub.length === 3){
+            // 중심 기준 오른쪽
+            if(sub[0] === 0 && sub[1] === 1 && sub[2] === 3){
+                index = 1
+            }
+            if(sub[0] === 0 && sub[1] === 1 && sub[2] === 2){
+                index = 2
+            }
+            if(sub[0] === 1 && sub[1] === 2 && sub[2] === 3){
+                index = 3
+            }
+            if(sub[0] === 0 && sub[1] === 2 && sub[2] === 3){
+                index = 0
+            }
+        }
+                    
+        //dis에 2개 있을때
+        if(sub.length === 2){
+        // 오른쪽에서 내려갈때
+        if(sub[0] === 1 && sub[1] === 2){
+            index = 2;
+        }
+        // 밑에서 왼쪽으로 갈때
+        else if(sub[0] === 2 && sub[1] === 3){
+            index = 3
+        }
+        // 왼쪽에서 위로 갈떄
+        else if(sub[0] === 0 && sub[1] === 3){
+            index = 0
+        }
+        // 위에서 오른쪽으로 갈떄
+        else if(sub[0] === 0 && sub[1] === 1){
+            index = 1;
+        }
+        else if(sub[0] === 1 && sub[1] === 3){
+            index = 1;
+        }
+        }
+
+        // dis에 1개 있을때(막혀있을때)
+        if(sub.length === 1){
+            index = sub[0];
+        }
+
+        sub.splice(0,sub.length); 
+                    
+        chart[x+dx[index]][y+dy[index]] = beforeNum+1;
+                    
+        if(beforeNum === M-1){
+            myArr.push(x+dx[index]+1)
+            myArr.push(y+dy[index]+1)
+        }
+        beforeNum ++;
+        stack.push([x+dx[index], y+dy[index]]);
+
+        if(beforeNum === N*N){
+            break;
+        }
+                    
+    }
+    if(M === 1){
+        myArr.push(parseInt(N/2)+1)
+        myArr.push(parseInt(N/2)+1)
+    }
+
+    chart.push(myArr);
+    let stringChart = chart.join('\n');
+    answer = stringChart.replace(/,/g," ");
+    return answer;
+}
+
+let s = '5,15'
+let input = s.replace(/,/g,"\n") 
+
+/*
+function solution(input) {
+    let inputArr = input.split('\n').map((x)=>parseInt(x));
+    const N = inputArr[0];
+    const M = inputArr[1];
+    let answer = '';
+    let chart = Array.from(Array(N), () => Array(N).fill(0));
+    chart[parseInt(N/2)][parseInt(N/2)] = 1;
     chart[parseInt(N/2)-1][parseInt(N/2)] = 2;
     chart[parseInt(N/2)-1][parseInt(N/2)+1] = 3;
     chart[parseInt(N/2)][parseInt(N/2)+1] = 4;
@@ -26,7 +134,7 @@ function solution(input) {
         let nX = x + dx[i];
         let nY = y + dy[i];
     }
-    */
+    
     let dx = [-1,0,1,0];
     let dy = [0,1,0,-1];
     let stack = [[parseInt(N/2)-1,parseInt(N/2)-1]];
@@ -66,7 +174,7 @@ function solution(input) {
     /*
     for(let i=0; i<N; i++){
         for(let j=0; j<N; j++){
-            if(chart[i][j]===0){ */// [2][2]
+            if(chart[i][j]===0){ /// [2][2]
                 //chart[i][j]= beforeNum+1;
                 //밑에서 이미 push 해주었으므로 stack.push([i, j]); // stack[[2,2]]
                
@@ -166,7 +274,7 @@ function solution(input) {
                     }
                     //x+dx[index]
                     //y+dy[index]
-                    */
+                    
                     
             
                 
@@ -184,4 +292,4 @@ let s = '5,25'
 let input = s.replace(/,/g,"\n") 
 //console.log(input)   
 
-console.log(solution(input));
+console.log(solution(input));*/
