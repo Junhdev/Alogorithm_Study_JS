@@ -1,0 +1,24 @@
+function solution(inputArr) {
+    //<open>tag<close>
+for(let i=0; i<inputArr.length; i++){
+    if(inputArr[i] === '<'){
+        tagStart.push(i)
+    }
+    if(inputArr[i] === '>'){
+        tagEnd.push(i)
+    }
+}
+for(let i=tagStart[j]; i<tagEnd[j]; i++){
+    inputArr.splice(0, )
+}
+tagEnd[0]-tagStart[0]
+tagEnd[1]-tagStart[1]
+
+    if(inputArr.includes('<')){
+        for(let i=0; i<inputArr.length; i++){
+            if(inputArr[i] === '>'){
+                if(inputArr[i+1] !== )
+            }
+        }
+    }
+}
