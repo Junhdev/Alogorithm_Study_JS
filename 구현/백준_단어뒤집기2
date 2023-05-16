@@ -1,5 +1,7 @@
-function solution(inputArr) {
+function solution(input) {
+    
     //<open>tag<close>
+        /*
 for(let i=0; i<inputArr.length; i++){
     if(inputArr[i] === '<'){
         tagStart.push(i)
@@ -21,4 +23,47 @@ tagEnd[1]-tagStart[1]
             }
         }
     }
+    */
+let inputArr = input.split('');
+let answer = '';
+let isTag = false;
+let stack = [];
+for(let i=0; i<inputArr.length; i++){
+    if(inputArr[i] === '<'){
+        isTag = true;
+        answer += inputArr[i]
+
+    }
+
+    if(isTag === true && inputArr[i] !== '<' && inputArr[i] !== '>' && inputArr[i] !== " "){
+        
+        answer += inputArr[i]
+    }
+
+    if(inputArr[i] === '>'){
+        isTag = false;
+        answer += inputArr[i]
+    }
+    
+    if(isTag === false && inputArr[i] !== " " && inputArr[i] !== '<' && inputArr[i] !== '>'){
+        
+        stack.push(inputArr[i]);
+        
+        if(inputArr[i+1] === " " || inputArr[i+1] === '<' || i+1 === input.length){
+            answer += stack.reverse().join('')
+            
+            //console.log(answer)
+            stack = [];
+        }
+
+    }
+    if(inputArr[i] === " "){
+        answer += " "
+    }
 }
+return answer;
+
+}
+
+let input = '<   space   >space space space<    spa   c e>'
+    console.log(solution(input))
