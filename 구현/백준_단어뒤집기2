@@ -51,8 +51,6 @@ for(let i=0; i<inputArr.length; i++){
         
         if(inputArr[i+1] === " " || inputArr[i+1] === '<' || i+1 === input.length){
             answer += stack.reverse().join('')
-            
-            //console.log(answer)
             stack = [];
         }
 

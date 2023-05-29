@@ -46,10 +46,11 @@ function solution() {
                 }
         }
 
+        // 위 2중 for문이 끝난 결과에 이어
         // 2-2) 공백이 있을때 모든 단어의 첫글자가 이미 지정이 되어있다면
         for(let k=0; k<input[i].length; k++){
             // 단축키 조건 만족하지 못했다는 걸 알려주는 표시 flag === 0 && 공백은 단축키 X(디버깅으로)
-            if(input[i].includes(' ') && flag === 0 && input2[i][k] !== ' '){
+            if(input[i].includes(' ') && flag === 0 && input[i][k] !== ' '){
                 if(!stack.includes(input[i][k].toLowerCase()) && !stack.includes(input[i][k].toUpperCase())){
                     stack.push(input[i][k])
                     input[i][k] = '[' + input[i][k] + ']'
