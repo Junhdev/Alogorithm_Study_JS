@@ -1,5 +1,5 @@
 function solution(n, build_frame) {
-    var answer = [[]];
+    let answer = [[]];
    // 함수 호이스팅 , 선언하기 / 이차원배열 / n+1 / 인덱스 
     //let ch0 = [[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0],0,0,0,0,0]
     let ch0 = Array.from(Array(n+1), () => Array(n+1).fill(0));
