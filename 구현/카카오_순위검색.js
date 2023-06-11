@@ -5,7 +5,7 @@ function solution(info, query) {
     let flag = 0;
     let answer = Array.from({length:query.length}, ()=>0)
     for(let i=0; i<query.length; i++){
-        for(let j=0; j<info.length; j++){
+        
             infoMap.set('언어', infoSplit[j][0])
             infoMap.set('직군', infoSplit[j][1])
             infoMap.set('경력', infoSplit[j][2])
@@ -19,7 +19,7 @@ function solution(info, query) {
             if(Number(querySplit[i][7]) <= Number(infoMap.get('점수'))) flag++
             if(flag === 5) answer[i]++
             flag = 0;
-        }
+        
     }
 
 return answer;
