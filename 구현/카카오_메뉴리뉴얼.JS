@@ -61,6 +61,7 @@ function solution(orders, course) {
             
         }
         for(let j=0; j<stack2.length; j++){
+            // 세부조건 잘 체크
             if(stack2[j][1] === Math.max(...stack3) && stack2[j][0].length === course[i] && stack2[j][1]>1 ){
                 answer.push(stack2[j][0])
             }
