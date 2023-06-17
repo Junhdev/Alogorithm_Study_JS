@@ -31,10 +31,10 @@ function solution(orders, course) {
         }
        
     }
+    console.log(stack)
     let flag = 0;
     stack2.push([stack[0],1])
     for(j=1; j<stack.length; j++){
-        if(stack.includes(stack[j])){
             for(let k=0; k<stack2.length; k++){
                 if(stack2[k][0] === stack[j]){
                     stack2[k][1] ++
@@ -46,7 +46,7 @@ function solution(orders, course) {
             }
             flag = 0;
             
-        }
+        
 
     }
 
