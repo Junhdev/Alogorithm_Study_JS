@@ -78,13 +78,4 @@ function solution(input, word){
     return answer;
    
 }
-//let input1 =['a','b','c','d']
-//let word=['P x', 'L', 'P y']
-//let input = ['a','b','c']
-//let word = ['L', 'L', 'L', 'L','L', 'P x', 'L', 'B', 'P y']
-//let input =['d','m','i','h']
-//let word=['B','B','P x', 'L', 'B','B','B','P y', 'D', 'D', 'P z']
-
-
-
 console.log(solution(input, word));
