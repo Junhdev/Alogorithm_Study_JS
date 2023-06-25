@@ -128,4 +128,3 @@ function solution() {
    
     return answer;
 }
-console.log(solution())
