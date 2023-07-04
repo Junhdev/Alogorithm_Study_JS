@@ -1,9 +1,3 @@
-const fs = require('fs');
-const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
-const [a, b ,...c] = fs.readFileSync(__dirname+'/input.txt').toString().trim().split("\n"); 
-let input = a.trim().split('');
-
-
 function solution(input, word){
     
     let arr = Array.from({length:20});
