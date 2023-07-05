@@ -2,7 +2,7 @@ function solution(arr){
     let answer = arr;
     for(let i=0; i<arr.length; i++){
         let tmp = arr[i];
-        // for line 13 scope issue해결
+        
         let j;
         for(let j=i-1; j>=0; j--){
             if(arr[j] > tmp){
