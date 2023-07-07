@@ -1,5 +1,5 @@
 function solution(N, arr) {
-    var answer = 0;
+    
     let reverseArr = arr.map(x=>x.reverse()).map(x=>x.join(''))
     let stack = [];
     
