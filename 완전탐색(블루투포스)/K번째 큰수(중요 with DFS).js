@@ -14,7 +14,6 @@ function solution(N, K, card){
         else{ //L===0 // L===1
             for(let i=s; i<N; i++){ // L===2,i===3
                     tmp[L] = card[i];
-                    //console.log(tmp);
                     DFS(L+1, i+1, sum+card[i]); 
                 }
             }
